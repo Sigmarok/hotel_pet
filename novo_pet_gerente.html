@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Pet - Novo Pet</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Hotel Pet</h1>
+        <nav>
+            <a href="dashboard_gerente.html">Painel</a>
+            <a href="reservas_gerente.html">Reservas</a>
+            <a href="pets_gerente.html">Pets</a>
+            <a href="usuarios_gerente.html">Usuários</a>
+            <a href="configuracoes_gerente.html">Configurações</a>
+            <a href="index.html">Sair</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Cadastrar Novo Pet</h2>
+        <form id="novo-pet-form">
+            <label for="proprietario">Proprietário:</label>
+            <select id="proprietario" name="proprietario" required>
+                <option value="joao">João da Silva</option>
+                <option value="maria">Maria da Silva</option>
+            </select>
+
+            <label for="nome-pet">Nome do Pet:</label>
+            <input type="text" id="nome-pet" name="nome-pet" required>
+
+            <label for="tipo-pet">Tipo de Animal:</label>
+            <input type="text" id="tipo-pet" name="tipo-pet" required>
+
+            <label for="raca-pet">Raça:</label>
+            <input type="text" id="raca-pet" name="raca-pet">
+
+            <label for="tamanho-pet">Tamanho:</label>
+            <select id="tamanho-pet" name="tamanho-pet">
+                <option value="Pequeno">Pequeno</option>
+                <option value="Médio">Médio</option>
+                <option value="Grande">Grande</option>
+            </select>
+
+            <label for="foto-pet">Foto:</label>
+            <input type="file" id="foto-pet" name="foto-pet">
+            
+            <button type="submit">Cadastrar Pet</button>
+        </form>
+    </main>
+</body>
+</html>

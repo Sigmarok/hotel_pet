@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Pet - Reservas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Hotel Pet</h1>
+        <nav>
+            <a href="dashboard_gerente.html">Painel</a>
+            <a href="reservas_gerente.html">Reservas</a>
+            <a href="pets_gerente.html">Pets</a>
+            <a href="usuarios_gerente.html">Usuários</a>
+            <a href="configuracoes_gerente.html">Configurações</a>
+            <a href="index.html">Sair</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Gestão de Reservas</h2>
+        <div class="action-bar">
+            <button onclick="window.location.href='nova_reserva_gerente.html'">Nova Reserva</button>
+            <input type="text" placeholder="Pesquisar">
+            <button>Limpar</button>
+        </div>
+        <section class="lista-reservas">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Pet</th>
+                        <th>Chegada</th>
+                        <th>Partida</th>
+                        <th>Status</th>
+                        <th>Total</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12349984501</td>
+                        <td>Max</td>
+                        <td>02/05/2021</td>
+                        <td>07/05/2021</td>
+                        <td>Reservada</td>
+                        <td>R$ 40,00</td>
+                        <td>
+                            <button onclick="window.location.href='editar_reserva_gerente.html'">Editar</button>
+                            <button onclick="window.location.href='detalhes_reserva_gerente.html'">Visualizar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>12349984502</td>
+                        <td>Ginger</td>
+                        <td>02/05/2021</td>
+                        <td>07/05/2021</td>
+                        <td>Em progresso</td>
+                        <td>R$ 50,00</td>
+                        <td>
+                            <button onclick="window.location.href='editar_reserva_gerente.html'">Editar</button>
+                            <button onclick="window.location.href='detalhes_reserva_gerente.html'">Visualizar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

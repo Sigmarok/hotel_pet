@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Pet - Editar Reserva</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Hotel Pet</h1>
+        <nav>
+            <a href="dashboard_gerente.html">Painel</a>
+            <a href="reservas_gerente.html">Reservas</a>
+            <a href="usuarios_gerente.html">Usuários</a>
+            <a href="configuracoes_gerente.html">Configurações</a>
+            <a href="index.html">Sair</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Editar Reserva</h2>
+        <form id="editar-reserva-form">
+            <label for="pet">Pet:</label>
+            <select id="pet" name="pet" required>
+                <option value="max">Max</option>
+                <option value="ginger">Ginger</option>
+            </select>
+
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
+                <option value="reservado">Reservado</option>
+                <option value="em_andamento">Em andamento</option>
+                <option value="cancelado">Cancelado</option>
+                <option value="finalizado">Finalizado</option>
+            </select>
+            
+            <label for="checkin">Data de Chegada:</label>
+            <input type="date" id="checkin" name="checkin" required>
+            
+            <label for="checkout">Data de Partida:</label>
+            <input type="date" id="checkout" name="checkout" required>
+            
+            <label for="notas">Notas:</label>
+            <textarea id="notas" name="notas"></textarea>
+
+            <label for="anotacoes">Anotações do Funcionário:</label>
+            <textarea id="anotacoes" name="anotacoes"></textarea>
+
+            <label for="nota-fiscal">Nota Fiscal:</label>
+            <input type="file" id="nota-fiscal" name="nota-fiscal">
+            
+            <p>Total das Diárias: R$<span id="total-diarias">0,00</span></p>
+            <button type="submit">Salvar</button>
+        </form>
+    </main>
+</body>
+</html>
