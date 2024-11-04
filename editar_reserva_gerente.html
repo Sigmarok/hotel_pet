@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Pet - Editar Reserva</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -12,14 +12,19 @@
         <nav>
             <a href="dashboard_gerente.html">Painel</a>
             <a href="reservas_gerente.html">Reservas</a>
+            <a href="pets_gerente.html">Pets</a>
             <a href="usuarios_gerente.html">Usuários</a>
             <a href="configuracoes_gerente.html">Configurações</a>
             <a href="index.html">Sair</a>
         </nav>
     </header>
 
-    <main>
+    <main class="fade-in">
         <h2>Editar Reserva</h2>
+
+        <!-- Mensagem de Sucesso -->
+        <div class="message-success" id="msg-sucesso" style="display: none;">Reserva atualizada com sucesso!</div>
+
         <form id="editar-reserva-form">
             <label for="pet">Pet:</label>
             <select id="pet" name="pet" required>
@@ -51,8 +56,17 @@
             <input type="file" id="nota-fiscal" name="nota-fiscal">
             
             <p>Total das Diárias: R$<span id="total-diarias">0,00</span></p>
-            <button type="submit">Salvar</button>
+            <button type="submit" onclick="mostrarMensagemSucesso()">Salvar Alterações</button>
         </form>
     </main>
+
+    <script>
+        function mostrarMensagemSucesso() {
+            document.getElementById("msg-sucesso").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("msg-sucesso").style.display = "none";
+            }, 3000);
+        }
+    </script>
 </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Pet - Novo Pet</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -19,14 +19,15 @@
         </nav>
     </header>
 
-    <main>
+    <main class="fade-in">
         <h2>Cadastrar Novo Pet</h2>
+
+        <!-- Mensagem de Sucesso -->
+        <div class="message-success" id="msg-sucesso" style="display: none;">Pet cadastrado com sucesso!</div>
+
         <form id="novo-pet-form">
             <label for="proprietario">Proprietário:</label>
-            <select id="proprietario" name="proprietario" required>
-                <option value="joao">João da Silva</option>
-                <option value="maria">Maria da Silva</option>
-            </select>
+            <input type="text" id="proprietario" name="proprietario" required>
 
             <label for="nome-pet">Nome do Pet:</label>
             <input type="text" id="nome-pet" name="nome-pet" required>
@@ -46,9 +47,18 @@
 
             <label for="foto-pet">Foto:</label>
             <input type="file" id="foto-pet" name="foto-pet">
-            
-            <button type="submit">Cadastrar Pet</button>
+
+            <button type="submit" onclick="mostrarMensagemSucesso()">Salvar Pet</button>
         </form>
     </main>
+
+    <script>
+        function mostrarMensagemSucesso() {
+            document.getElementById("msg-sucesso").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("msg-sucesso").style.display = "none";
+            }, 3000);
+        }
+    </script>
 </body>
 </html>

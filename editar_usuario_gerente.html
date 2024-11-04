@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Pet - Editar Usuário</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -12,31 +12,44 @@
         <nav>
             <a href="dashboard_gerente.html">Painel</a>
             <a href="reservas_gerente.html">Reservas</a>
+            <a href="pets_gerente.html">Pets</a>
             <a href="usuarios_gerente.html">Usuários</a>
             <a href="configuracoes_gerente.html">Configurações</a>
             <a href="index.html">Sair</a>
         </nav>
     </header>
 
-    <main>
+    <main class="fade-in">
         <h2>Editar Usuário</h2>
+
+        <!-- Mensagem de Sucesso -->
+        <div class="message-success" id="msg-sucesso" style="display: none;">Dados do usuário atualizados com sucesso!</div>
+
         <form id="editar-usuario-form">
-            <label for="nome-usuario">Nome:</label>
-            <input type="text" id="nome-usuario" name="nome-usuario" value="João da Silva" required>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" value="Maria Oliveira" required>
 
-            <label for="email-usuario">Email:</label>
-            <input type="email" id="email-usuario" name="email-usuario" value="joaodasilva@pet.com" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="maria.oliveira@email.com" required>
 
-            <label for="telefone-usuario">Telefone:</label>
-            <input type="tel" id="telefone-usuario" name="telefone-usuario" value="(73) 99876-8943">
-
-            <label for="funcao-usuario">Função:</label>
-            <select id="funcao-usuario" name="funcao-usuario">
-                <option value="Cliente">Cliente</option>
+            <label for="funcao">Função:</label>
+            <select id="funcao" name="funcao">
+                <option value="Cliente" selected>Cliente</option>
                 <option value="Funcionário">Funcionário</option>
-                <option value="Gerente" selected>Gerente</option>
+                <option value="Gerente">Gerente</option>
             </select>
             
-            <label for="status-usuario">Status:</label>
-            <select id="status-usuario" name="status-usuario">
-                <option value="Ativo" selected>Ativo</opti
+            <button type="submit" onclick="mostrarMensagemSucesso()">Salvar Alterações</button>
+        </form>
+    </main>
+
+    <script>
+        function mostrarMensagemSucesso() {
+            document.getElementById("msg-sucesso").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("msg-sucesso").style.display = "none";
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

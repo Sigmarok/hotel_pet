@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Pet - Relatório de Reservas</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -19,52 +19,29 @@
         </nav>
     </header>
 
-    <main>
+    <main class="fade-in">
         <h2>Relatório de Reservas</h2>
-        <form id="filtro-relatorio-form">
-            <label for="data-inicial">Data Inicial:</label>
-            <input type="date" id="data-inicial" name="data-inicial" required>
-
-            <label for="data-final">Data Final:</label>
-            <input type="date" id="data-final" name="data-final" required>
-
-            <label for="status-reserva">Status:</label>
-            <select id="status-reserva" name="status-reserva">
-                <option value="todos">Todos</option>
-                <option value="reservado">Reservado</option>
-                <option value="em_andamento">Em andamento</option>
-                <option value="cancelado">Cancelado</option>
-                <option value="finalizado">Finalizado</option>
-            </select>
-
-            <button type="submit">Gerar Relatório</button>
-        </form>
-
-        <section class="relatorio-reservas">
-            <h3>Reservas de 02/05/2021 a 07/05/2021 - Status: Em andamento</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Pet</th>
-                        <th>Proprietário</th>
-                        <th>Chegada</th>
-                        <th>Partida</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>12349984501</td>
-                        <td>Max</td>
-                        <td>João da Silva</td>
-                        <td>02/05/2021</td>
-                        <td>07/05/2021</td>
-                        <td>Em progresso</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+        <p>Exibe um resumo das reservas realizadas.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Pet</th>
+                    <th>Proprietário</th>
+                    <th>Status</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>12345</td>
+                    <td>Max</td>
+                    <td>João da Silva</td>
+                    <td>Finalizado</td>
+                    <td>R$ 50,00</td>
+                </tr>
+            </tbody>
+        </table>
     </main>
 </body>
 </html>

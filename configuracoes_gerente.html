@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Pet - Configurações</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -14,12 +14,17 @@
             <a href="reservas_gerente.html">Reservas</a>
             <a href="pets_gerente.html">Pets</a>
             <a href="usuarios_gerente.html">Usuários</a>
+            <a href="configuracoes_gerente.html">Configurações</a>
             <a href="index.html">Sair</a>
         </nav>
     </header>
 
-    <main>
+    <main class="fade-in">
         <h2>Configurações do Sistema</h2>
+
+        <!-- Mensagem de Sucesso -->
+        <div class="message-success" id="msg-sucesso" style="display: none;">Configurações salvas com sucesso!</div>
+
         <form id="configuracoes-form">
             <label for="valor-diaria">Valor da Diária (R$):</label>
             <input type="number" id="valor-diaria" name="valor-diaria" step="0.01" value="10.00" required>
@@ -27,8 +32,17 @@
             <label for="vagas-disponiveis">Vagas Disponíveis:</label>
             <input type="number" id="vagas-disponiveis" name="vagas-disponiveis" value="3" required>
             
-            <button type="submit">Salvar Configurações</button>
+            <button type="submit" onclick="mostrarMensagemSucesso()">Salvar Configurações</button>
         </form>
     </main>
+
+    <script>
+        function mostrarMensagemSucesso() {
+            document.getElementById("msg-sucesso").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("msg-sucesso").style.display = "none";
+            }, 3000);
+        }
+    </script>
 </body>
 </html>

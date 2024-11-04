@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Pet - Relatório de Usuários</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -19,43 +19,27 @@
         </nav>
     </header>
 
-    <main>
+    <main class="fade-in">
         <h2>Relatório de Usuários</h2>
-        <form id="filtro-usuarios-form">
-            <label for="funcao-usuario">Função:</label>
-            <select id="funcao-usuario" name="funcao-usuario">
-                <option value="todos">Todos</option>
-                <option value="cliente">Cliente</option>
-                <option value="funcionario">Funcionário</option>
-                <option value="gerente">Gerente</option>
-            </select>
-
-            <button type="submit">Gerar Relatório</button>
-        </form>
-
-        <section class="relatorio-usuarios">
-            <h3>Relatório de Usuários - Todos os Funcionários</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Email</th>
-                        <th>Nome</th>
-                        <th>Função</th>
-                        <th>Status</th>
-                        <th>Criado em</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>maria@pet.com</td>
-                        <td>Maria da Silva</td>
-                        <td>Funcionário</td>
-                        <td>Ativo</td>
-                        <td>10/03/2021</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+        <p>Exibe um resumo dos usuários cadastrados.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Função</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>98765</td>
+                    <td>Maria Oliveira</td>
+                    <td>maria.oliveira@email.com</td>
+                    <td>Cliente</td>
+                </tr>
+            </tbody>
+        </table>
     </main>
 </body>
 </html>

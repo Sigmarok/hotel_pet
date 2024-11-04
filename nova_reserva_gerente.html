@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Pet - Nova Reserva</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -19,8 +19,13 @@
         </nav>
     </header>
 
-    <main>
+    <main class="fade-in">
         <h2>Criar Nova Reserva</h2>
+        
+        <!-- Mensagem de Feedback -->
+        <div class="message-success" id="msg-sucesso" style="display: none;">Reserva criada com sucesso!</div>
+        <div class="message-error" id="msg-erro" style="display: none;">Erro ao criar a reserva. Tente novamente.</div>
+
         <form id="nova-reserva-form">
             <label for="pet">Pet:</label>
             <select id="pet" name="pet" required>
@@ -29,10 +34,10 @@
             </select>
             
             <label for="checkin">Data de Chegada:</label>
-            <input type="date" id="checkin" name="checkin" required>
+            <input type="date" id="checkin" name="checkin" min="2000-01-01" required>
             
             <label for="checkout">Data de Partida:</label>
-            <input type="date" id="checkout" name="checkout" required>
+            <input type="date" id="checkout" name="checkout" min="2000-01-01" required>
             
             <label for="status">Status:</label>
             <select id="status" name="status" required>
@@ -46,9 +51,18 @@
             <textarea id="notas" name="notas"></textarea>
             
             <p>Total das Diárias: R$<span id="total-diarias">0,00</span></p>
-            <button type="submit">Salvar Reserva</button>
+            <button type="submit" onclick="mostrarMensagemSucesso()">Salvar Reserva</button>
             <button type="reset">Limpar</button>
         </form>
     </main>
+
+    <script>
+        function mostrarMensagemSucesso() {
+            document.getElementById("msg-sucesso").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("msg-sucesso").style.display = "none";
+            }, 3000);
+        }
+    </script>
 </body>
 </html>

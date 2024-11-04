@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Pet - Reservas</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -19,7 +19,7 @@
         </nav>
     </header>
 
-    <main>
+    <main class="fade-in">
         <h2>Gestão de Reservas</h2>
         <div class="action-bar">
             <button onclick="window.location.href='nova_reserva_gerente.html'">Nova Reserva</button>
@@ -50,23 +50,36 @@
                         <td>
                             <button onclick="window.location.href='editar_reserva_gerente.html'">Editar</button>
                             <button onclick="window.location.href='detalhes_reserva_gerente.html'">Visualizar</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>12349984502</td>
-                        <td>Ginger</td>
-                        <td>02/05/2021</td>
-                        <td>07/05/2021</td>
-                        <td>Em progresso</td>
-                        <td>R$ 50,00</td>
-                        <td>
-                            <button onclick="window.location.href='editar_reserva_gerente.html'">Editar</button>
-                            <button onclick="window.location.href='detalhes_reserva_gerente.html'">Visualizar</button>
+                            <button onclick="abrirModal()">Excluir</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </section>
     </main>
+
+    <div class="modal" id="modal-excluir">
+        <div class="modal-content">
+            <span class="close-modal" onclick="fecharModal()">&times;</span>
+            <p>Tem certeza de que deseja excluir esta reserva?</p>
+            <button onclick="confirmarExclusao()">Sim, excluir</button>
+            <button onclick="fecharModal()">Cancelar</button>
+        </div>
+    </div>
+
+    <script>
+        function abrirModal() {
+            document.getElementById("modal-excluir").classList.add("show");
+        }
+        
+        function fecharModal() {
+            document.getElementById("modal-excluir").classList.remove("show");
+        }
+        
+        function confirmarExclusao() {
+            fecharModal();
+            alert("Reserva excluída com sucesso.");
+        }
+    </script>
 </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Pet - Pets</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -19,7 +19,7 @@
         </nav>
     </header>
 
-    <main>
+    <main class="fade-in">
         <h2>Gestão de Pets</h2>
         <div class="action-bar">
             <button onclick="window.location.href='novo_pet_gerente.html'">Novo Pet</button>
@@ -32,29 +32,53 @@
                     <tr>
                         <th>Id</th>
                         <th>Nome</th>
+                        <th>Proprietário</th>
                         <th>Tipo</th>
                         <th>Raça</th>
-                        <th>Tamanho</th>
-                        <th>Proprietário</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>12349984501</td>
+                        <td>12345</td>
                         <td>Max</td>
+                        <td>João da Silva</td>
                         <td>Cachorro</td>
                         <td>Pastor Alemão</td>
-                        <td>Grande</td>
-                        <td>João da Silva</td>
                         <td>
                             <button onclick="window.location.href='editar_pet_gerente.html'">Editar</button>
-                            <button>Visualizar</button>
+                            <button onclick="window.location.href='detalhes_pet_gerente.html'">Visualizar</button>
+                            <button onclick="abrirModal()">Excluir</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </section>
     </main>
+
+    <!-- Modal de Confirmação de Exclusão -->
+    <div class="modal" id="modal-excluir">
+        <div class="modal-content">
+            <span class="close-modal" onclick="fecharModal()">&times;</span>
+            <p>Tem certeza de que deseja excluir este pet?</p>
+            <button onclick="confirmarExclusao()">Sim, excluir</button>
+            <button onclick="fecharModal()">Cancelar</button>
+        </div>
+    </div>
+
+    <script>
+        function abrirModal() {
+            document.getElementById("modal-excluir").classList.add("show");
+        }
+
+        function fecharModal() {
+            document.getElementById("modal-excluir").classList.remove("show");
+        }
+
+        function confirmarExclusao() {
+            fecharModal();
+            alert("Pet excluído com sucesso.");
+        }
+    </script>
 </body>
 </html>

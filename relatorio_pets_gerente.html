@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Pet - Relatório de Pets</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -19,52 +19,29 @@
         </nav>
     </header>
 
-    <main>
+    <main class="fade-in">
         <h2>Relatório de Pets</h2>
-        <form id="filtro-pets-form">
-            <label for="tipo-pet">Tipo:</label>
-            <select id="tipo-pet" name="tipo-pet">
-                <option value="todos">Todos</option>
-                <option value="cachorro">Cachorro</option>
-                <option value="gato">Gato</option>
-            </select>
-
-            <label for="tamanho-pet">Tamanho:</label>
-            <select id="tamanho-pet" name="tamanho-pet">
-                <option value="todos">Todos</option>
-                <option value="pequeno">Pequeno</option>
-                <option value="medio">Médio</option>
-                <option value="grande">Grande</option>
-            </select>
-
-            <button type="submit">Gerar Relatório</button>
-        </form>
-
-        <section class="relatorio-pets">
-            <h3>Relatório de Pets - Todos os Cachorros Grandes</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Nome</th>
-                        <th>Tipo</th>
-                        <th>Raça</th>
-                        <th>Tamanho</th>
-                        <th>Proprietário</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>12349984501</td>
-                        <td>Max</td>
-                        <td>Cachorro</td>
-                        <td>Pastor Alemão</td>
-                        <td>Grande</td>
-                        <td>João da Silva</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+        <p>Exibe um resumo dos pets cadastrados.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Proprietário</th>
+                    <th>Tipo</th>
+                    <th>Raça</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>12345</td>
+                    <td>Max</td>
+                    <td>João da Silva</td>
+                    <td>Cachorro</td>
+                    <td>Pastor Alemão</td>
+                </tr>
+            </tbody>
+        </table>
     </main>
 </body>
 </html>
