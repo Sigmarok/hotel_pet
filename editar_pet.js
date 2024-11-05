@@ -1,3 +1,29 @@
+//carregar os dados do usuario na pagina
+// Obtém os dados existentes do localStorage
+const dados = JSON.parse(localStorage.getItem("hotelPetDados")) || { pets: [], usuarios: [] };
+const select = document.getElementById("proprietario");
+
+// Encontra o usuário com base no email (ou ID se preferir)
+const url = new URLSearchParams(window.location.search)
+const petIndex = dados.pets.findIndex(pet => pet.id === url.get("id"));
+
+console.log("aqui: ", dados.usuarios);
+
+// Limpa as opções atuais (se houver)
+select.innerHTML = "";
+
+// Percorre o array e cria uma opção para cada item
+dados.usuarios.forEach((usuario) => {
+  const option = document.createElement("option");
+  option.value = usuario.id; // Define o valor da opção
+  option.textContent = `${usuario.nome}`; // Define o texto exibido da opção
+  select.appendChild(option); // Adiciona a opção ao select
+});
+//Preenchendo os dados no html/pagina
+document.getElementById("nome-pet").value = dados.pets[petIndex].nome;
+document.getElementById("tipo-pet").value = dados.pets[petIndex].tipo;
+document.getElementById("raca-pet").value = dados.pets[petIndex].raca;
+
 // Adiciona um evento de submit ao formulário
 document.getElementById('editar-pet-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Impede o envio padrão do formulário

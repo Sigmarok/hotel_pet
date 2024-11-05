@@ -8,6 +8,7 @@ function carregarReservas() {
     // Obtém os dados armazenados no localStorage
     const dados = JSON.parse(localStorage.getItem("hotelPetDados"));
     const tabelaReservas = document.querySelector(".lista-reservas table tbody");
+    console.log(dados)
 
     // Limpa o conteúdo atual da tabela antes de adicionar as reservas
     tabelaReservas.innerHTML = ""; // Descomente esta linha para limpar a tabela antes de adicionar novas reservas
@@ -15,9 +16,10 @@ function carregarReservas() {
     // Itera sobre cada reserva e adiciona uma linha na tabela
     dados.reservas.forEach(reserva => {
         const row = document.createElement("tr");
+        const pet_index = dados.pets.findIndex(pet => pet.id === reserva.pet);
         row.innerHTML = `
             <td>${reserva.id}</td>
-            <td>${reserva.pet}</td>
+            <td>${dados.pets[pet_index].nome}</td>
             <td>${reserva.chegada}</td>
             <td>${reserva.partida}</td>
             <td>${reserva.status}</td>
