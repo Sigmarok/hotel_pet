@@ -1,5 +1,5 @@
 // Obtém os dados existentes do localStorage
-const dados = JSON.parse(localStorage.getItem("hotelPetDados")) || { pets: [] };
+const dados = JSON.parse(localStorage.getItem("hotelPetDados")) || { pets: [], configuracoes: [] };
 const select = document.getElementById("pet");
 
 // Limpa as opções atuais (se houver)
