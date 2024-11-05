@@ -26,11 +26,9 @@
         <div class="message-success" id="msg-sucesso" style="display: none;">Reserva criada com sucesso!</div>
         <div class="message-error" id="msg-erro" style="display: none;">Erro ao criar a reserva. Tente novamente.</div>
 
-        <form id="nova-reserva-form">
+        <form id="nova-reserva-form" onsubmit="return criarReserva(event);">
             <label for="pet">Pet:</label>
             <select id="pet" name="pet" required>
-                <option value="max">Max</option>
-                <option value="ginger">Ginger</option>
             </select>
             
             <label for="checkin">Data de Chegada:</label>
@@ -51,18 +49,12 @@
             <textarea id="notas" name="notas"></textarea>
             
             <p>Total das Diárias: R$<span id="total-diarias">0,00</span></p>
-            <button type="submit" onclick="mostrarMensagemSucesso()">Salvar Reserva</button>
+            <button type="submit">Salvar Reserva</button>
             <button type="reset">Limpar</button>
         </form>
     </main>
 
-    <script>
-        function mostrarMensagemSucesso() {
-            document.getElementById("msg-sucesso").style.display = "block";
-            setTimeout(() => {
-                document.getElementById("msg-sucesso").style.display = "none";
-            }, 3000);
-        }
-    </script>
+    <script src="comum.js"></script>
+    <script src="nova_reserva.js"></script>
 </body>
 </html>
