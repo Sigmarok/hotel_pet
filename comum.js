@@ -1,16 +1,12 @@
 // comum.js
 
-function obterDadosDoLocalStorage() {
+function getData() {
     const dados = JSON.parse(localStorage.getItem("hotelPetDados"));
     return dados || {
         reservas: [],
         pets: [],
         usuarios: [],
         funcionarios: [],
-        configuracoes: { diaria: "0.00", vagas: "0" }
+        configuracoes: { diaria: 0.00, vagas: 0 }
     };
-}
-
-function salvarDadosNoLocalStorage(dados) {
-    localStorage.setItem("hotelPetDados", JSON.stringify(dados));
 }

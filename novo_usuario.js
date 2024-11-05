@@ -18,8 +18,14 @@ function cadastrarUsuario() {
         funcao: funcao
     };
 
+    console.log(novoUsuario);
+    
+
     // Obtém os dados existentes do localStorage
     const dados = JSON.parse(localStorage.getItem("hotelPetDados")) || { usuarios: [] };
+    console.log(dados);
+    if(dados.usuarios == undefined)
+        dados.usuarios = [];
 
     // Adiciona o novo usuário à lista
     dados.usuarios.push(novoUsuario);

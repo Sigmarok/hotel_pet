@@ -15,6 +15,11 @@ document.getElementById('novo-pet-form').addEventListener('submit', function(eve
 
     // Obtém os dados existentes no localStorage
     const dados = JSON.parse(localStorage.getItem("hotelPetDados")) || { pets: [] };
+
+    //checagem se a lista ta vazia
+  if(dados.pets == undefined)
+    dados.pets = [];
+
     dados.pets.push(novoPet); // Adiciona o novo pet ao array
 
     // Salva os dados atualizados no localStorage

@@ -16,8 +16,9 @@ function salvarConfiguracoes() {
         valorDiaria: valorDiaria,
         vagasDisponiveis: vagasDisponiveis
     };
-
+    
     localStorage.setItem("hotelPetConfiguracoes", JSON.stringify(configuracoes));
+    console.log("aqui", valorDiaria, vagasDisponiveis)
 }
 
 function carregarConfiguracoes() {
@@ -26,7 +27,10 @@ function carregarConfiguracoes() {
     if (configuracoesSalvas) {
         document.getElementById("valor-diaria").value = configuracoesSalvas.valorDiaria;
         document.getElementById("vagas-disponiveis").value = configuracoesSalvas.vagasDisponiveis;
+        
     }
+
+
 }
 
 function mostrarMensagemSucesso() {

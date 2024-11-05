@@ -1,5 +1,10 @@
 // Obtém os dados existentes do localStorage
-const dados = JSON.parse(localStorage.getItem("hotelPetDados")) || { pets: [], configuracoes: [] };
+const dados = JSON.parse(localStorage.getItem("hotelPetDados")) || {
+  pets: [],
+  reservas: [],
+  configuracoes: {},
+};
+console.log("aqui: ", dados);
 const select = document.getElementById("pet");
 
 // Limpa as opções atuais (se houver)
@@ -14,8 +19,10 @@ dados.pets.forEach((pet) => {
 });
 
 // Função para criar uma nova reserva
-function criarReserva(event) {
+function criarReserva(event, dados) {
   event.preventDefault(); // Evita o envio padrão do formulário
+  console.log(dados);
+  
 
   // Obtém os valores dos campos do formulário
   const pet = document.getElementById("pet").value;
@@ -29,11 +36,12 @@ function criarReserva(event) {
     mostrarMensagemErro(
       "A data de partida deve ser maior que a data de chegada."
     );
+    console.log("deu ruim");
     return;
   }
-
-  // Calcula o total das diárias (assumindo que o valor da diária é R$ 40,00)
-  const valorDiaria = 40; // Valor fixo da diária
+  // Calcula o total das diárias
+  console.log("aqui: ", dados["configuracoes"]);
+  const valorDiaria = dados.configuracoes.diaria;
   const totalDiarias = calcularTotalDiarias(checkin, checkout, valorDiaria);
 
   // Gera um ID único para a nova reserva
@@ -50,12 +58,14 @@ function criarReserva(event) {
     notas: notas,
   };
 
+  //checagem se a lista ta vazia
+  if(dados.reservas == undefined)
+    dados.reservas = [];
+
   // Armazena a nova reserva no localStorage
-  const dados = JSON.parse(localStorage.getItem("hotelPetDados")) || {
-    reservas: [],
-  };
   dados.reservas.push(novaReserva);
   localStorage.setItem("hotelPetDados", JSON.stringify(dados));
+  console.log("aqui modificado: ", dados);
 
   // Exibe mensagem de sucesso e limpa o formulário
   mostrarMensagemSucesso("Reserva criada com sucesso!");
@@ -68,14 +78,13 @@ function calcularTotalDiarias(checkin, checkout, valorDiaria) {
   const dataCheckin = new Date(checkin);
   const dataCheckout = new Date(checkout);
   const diferencaEmDias = (dataCheckout - dataCheckin) / (1000 * 60 * 60 * 24); // Converte milissegundos para dias
-  return diferencaEmDias * valorDiaria;
+  console.log("diferença em dias: ", diferencaEmDias);
+    console.log("diferença em dias: ", dados.configuracoes.diaria);
+  return (diferencaEmDias * valorDiaria);
 }
 
 // Função para gerar um ID único para a reserva
 function gerarIdReserva() {
-  const dados = JSON.parse(localStorage.getItem("hotelPetDados")) || {
-    reservas: [],
-  };
   return (dados.reservas.length + 1).toString(); // Simples geração de ID com base na contagem
 }
 
