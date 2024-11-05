@@ -23,7 +23,7 @@
         <h2>Gestão de Pets</h2>
         <div class="action-bar">
             <button onclick="window.location.href='novo_pet_gerente.html'">Novo Pet</button>
-            <input type="text" placeholder="Pesquisar">
+            <input type="text" id="pesquisa" placeholder="Pesquisar" onkeyup="pesquisarTabela()">
             <button>Limpar</button>
         </div>
         <section class="lista-pets">

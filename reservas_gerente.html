@@ -23,7 +23,7 @@
         <h2>Gestão de Reservas</h2>
         <div class="action-bar">
             <button onclick="window.location.href='nova_reserva_gerente.html'">Nova Reserva</button>
-            <input type="text" placeholder="Pesquisar">
+            <input type="text" id="pesquisa" placeholder="Pesquisar" onkeyup="pesquisarTabela()">
             <button>Limpar</button>
         </div>
         <section class="lista-reservas">

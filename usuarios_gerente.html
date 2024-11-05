@@ -23,7 +23,7 @@
         <h2>Gestão de Usuários</h2>
         <div class="action-bar">
             <button onclick="window.location.href='novo_usuario_gerente.html'">Novo Usuário</button>
-            <input type="text" placeholder="Pesquisar">
+            <input type="text" id="pesquisa" placeholder="Pesquisar" onkeyup="pesquisarTabela()">
             <button>Limpar</button>
         </div>
         <section class="lista-usuarios">

@@ -69,3 +69,34 @@ function fecharModal() {
 function mostrarModal(mensagem) {
     alert(mensagem); // Exemplo de modal simples usando alert. Você pode implementar um modal mais complexo se desejar.
 }
+
+// Função para pesquisar na tabela
+function pesquisarTabela() {
+    // Obter o valor do campo de pesquisa e normalizá-lo para minúsculas
+    const input = document.getElementById("pesquisa");
+    const filter = input.value.toLowerCase();
+    const table = document.querySelector(".lista-reservas");
+    const rows = table.getElementsByTagName("tr");
+
+    // Percorre cada linha da tabela (exceto o cabeçalho)
+    for (let i = 1; i < rows.length; i++) {
+        const row = rows[i];
+        const cells = row.getElementsByTagName("td");
+        let match = false;
+
+        // Verifica se alguma célula na linha contém o texto da pesquisa
+        for (let j = 0; j < cells.length; j++) {
+            const cell = cells[j];
+            if (cell) {
+                const cellText = cell.textContent || cell.innerText;
+                if (cellText.toLowerCase().indexOf(filter) > -1) {
+                    match = true;
+                    break;
+                }
+            }
+        }
+
+        // Mostra ou oculta a linha com base no resultado da pesquisa
+        row.style.display = match ? "" : "none";
+    }
+}
